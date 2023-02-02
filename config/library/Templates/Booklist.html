@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+
+
+
+{% block context %}
+{% for Book in   object_list %}
+<ul>
+    
+    <li><h3>{{Book.title}}</h3>
+    <form action="{%url 'book_delete' Book.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit"class="btn btn-danger" value="Delete">
+       
+
+    </form>
+    <!-- <td>
+        <a href="{%url 'book_update' Book.id %}" >Edit</a>
+
+    </td> -->
+    <form action="{%url 'book_update' Book.id %}" method="post">
+        {% csrf_token %}
+        
+        <input type="submit"class="btn btn-danger" value="update">
+       
+
+    </form>
+    
+     <!-- <a href="{% url 'book_delete' Book.id %}" class="btn btn-sm btn-danger">Delete</a> -->
+   
+    </li>
+  
+
+</ul>
+{% endfor %}
+
+    
+{% endblock context %}
+
+
+
+
+

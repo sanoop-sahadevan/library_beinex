@@ -1,0 +1,21 @@
+
+
+
+{% extends 'base.html'%}
+
+
+
+{% block context %}
+
+<ul>
+    {% for Author in object_list %}
+    <li><h3>{{Author.name}}</h3>
+    <p>
+        {{Author.age}}
+    </p></li>
+    {% endfor %}
+
+
+</ul>
+    
+{% endblock context %}
